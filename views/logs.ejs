@@ -1,0 +1,67 @@
+<!-- This is the logs main page -->
+
+
+<!-- Bootstrap link  -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+<!-- jQuery link -->
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<% include \Quadcopter-Project\Quadcopter_web\views\partials\header %>
+
+<div class="backgroundLogs p-3 mb-2 bg-gradient-primary" style="background: linear-gradient(#7f7fd5, #86a8e7, #91eae4, #86a8e7, #7f7fd5); margin-bottom: 0px !important;">
+  <div class="container" style="width:60%">
+    <div class="jumbotron rounded border border-dark shadow-lg" align="center" style="margin-top: 10px; border-color:#969696 !important;">
+      <h2 class="Display-3">Logs</h2>
+      <hr class="my-4">
+        <p>
+          <span class="text text-muted" style="font-size: 25;">Welcome to the logs page.</span>
+        </p>
+    </div>
+  </div>
+
+  <!-- Shit just to make some space -->
+  <div style="visibility: hidden;">
+    <h4>It starts here</h4>
+    <% for(var i=0; i<15; i++){ %>
+      <p>
+        <h3>tptptp</h3>
+      </p>
+    <% } %>
+  </div>
+</div>
+
+<!-- include footer partial -->
+<% include \Quadcopter-Project\Quadcopter_web\views\partials\footer %>
+
+<!-- tptpt -->
+<!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Launch demo modal
+</button> -->
+
+<!-- Modal -->
+<!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div> -->
+<!-- tptp -->
