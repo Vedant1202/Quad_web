@@ -1,0 +1,282 @@
+<!-- what is a quadcopter page -->
+
+<!-- Bootstrap link  -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+<!-- jQuery link -->
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+
+<!-- include header partial -->
+<% include \Quadcopter-Project\Quadcopter_web\views\partials\header %>
+
+<!-- include a navbar for what and why pages -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light rounded-bottom sticky-top shadow border" style="background-color:#efefef !important; border-color:#a5a5a5 !important;">
+  <a class="navbar-brand" href="#"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav py-0">
+      <li class="nav-item">
+      <a class="nav-link py-0" href="/whatIs"><button class="btn btn-outline-secondary" type="button" style="margin-left:50px; margin-right:50px;">What?</button></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link py-0" href="/whyIs"><button class="btn btn-outline-secondary" type="button">Why?</button></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link py-0" href="/news"><button class="btn btn-info" type="button" style="margin-left:950px;">News</button></a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<style media="screen">
+  .backgroundWhat{
+    /* background-image: url("https://lh3.googleusercontent.com/sEsJ73CD0_329xBO-9rSN1MG4AC1bVU-AlXnpA2hndMunqIaKD6z70PucyCQ_VavFWKGNoO98NcnSfc8x1q3Mu-U4LXQRcdQYyGidqZW0tmRvzICCX7MXN6wvjM77_87TEpMvUtF6Jb8-JDAGTGcbvbfKwQ8v-MZrgBUMYxLsb9S2ZjHf04uVeD867kAc1TIU-BrJbVz7THadrX-F4kXl3L_v4pzHstjL7ytUxc61SgQPH2yQOnBaJBeT3T0Ru9I7p35PY1d0plBj_3MLNqBRctuTMBeROoAOMWrGBa6JOmtprEMHnqXcinZT1xaYYWL_MmAAze4JqA1FLTgbWChcdQl22Eu7O6SRYyEXmYjZczpr66IvjUsXhD53Xp8I705N1Ueg51byzXayFFrfYTtAuf5j25Dr4s8DnS-Tv3CVLfOkbRHF-IsX6nO2ojgTTfLX539aeOcYLrTdM6j1pFPBJhi-ZoNKh4pSG3cqqzxYThwSmgTr062FpmBqWMr5pEAqOCpuUAke_4f03rlIzN8fFwVR_w9C8FqrM6N8_j9t0z7yIR010n2KENbsPPVtCc688Xuo4mRxrhCHrDksAZa8EVm-aVhPdQY_w=w959-h540-no"); */
+    background: linear-gradient(#2f80ed, #56ccf2, #addbdb);
+    background-repeat: no-repeat;
+    background-position: relative;
+    overflow: auto;
+    background-size: 100%;
+    background-attachment: scroll;
+  }
+</style>
+
+<div class="backgroundWhat">
+  <!-- MAIN CONTENT -->
+  <div class="container" align="center">
+    <div class="jumbotron shadow-lg" style="margin:10px; width:80%;">
+      <h3 class="Display-4 text text-muted">Into the</h3>
+      <h3 class="Display-3">Quadcopter</h3>
+      <hr class="my-4">
+      <h6 class="text text-muted">This page contains information about Quadcopters and how they fly!</h6>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="jumbotron shadow rounded" style="background-color: rgba(255, 255, 255, 0.5); margin-top: 100px;">
+      <div class="nav nav-tabs rounded shadow-lg nav-fill" id="myTab" role="tablist" style="background-color: white" id="nav-tab" role="tablist">
+        <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#physicsFlight" role="tab" aria-controls="nav-home" aria-selected="true" style="color: #005384 !important">Home</a>
+        <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#pidTuning" role="tab" aria-controls="nav-profile" aria-selected="false" style="color: #005384 !important">Profile</a>
+        <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false" style="color: #005384 !important">Contact</a>
+      </div>
+      </nav>
+      <div class="tab-content" id="nav-tabContent">
+        <div class="tab-pane fade show active" id="physicsFlight" role="tabpanel" aria-labelledby="nav-home-tab">
+          <div class="jumbotron border shadow-lg" style="background-color: white; border-color: #d6d6d6 !important; color: #005384 !important">
+            <h1 align="center" style="font-weight: 15">Physics of flight</h1>
+            <hr class="my-4">
+            <div class="card text-center rounded shadow">
+              <div class="card-header" align="left">Physics of flight</div>
+              <div class="card-body" style="text-align: justify;">
+                <h5 class="card-title">Multirotor Coordinate System</h5>
+                <p class="card-text" style=" margin-top: 20px;">While discussing multirotor construction and piloting, it will certainly be useful to have a way of communicating different movements of the multirotor. Fortunately, mathematicians way back in the 1700s came up with a way of describing the orientation of rigid bodies in space. The system they developed uses a set of three angles to describe, in this case, the orientation of the multirotor around the three spacial dimensions. You have probably heard of these angles before, they are called roll, pitch, and yaw.</p>
+                <img src="https://i2.wp.com/blacktieaerial.com/wp-content/uploads/2014/04/roll-pitch-yaw-angles.jpg?w=400&ssl=1" alt="" style="margin: 20px;">
+                <p class="card-text" style=" margin-top: 20px;">
+                  <ul>
+                    <li>The roll angle of the multirotor describes how the craft is tilted side to side. Rotation about the roll axis is like tilting your head towards one of your shoulders. Rolling the multirotor causes it to move sideways.</li>
+                    <li>The pitch angle of the multirotor describes how the craft is tilted forwards or backwards. Rotation about the pitch axis is like tilting your head in order to look up or down. Pitching the multirotor causes it to move forwards or backwards.</li>
+                    <li>The yaw angle of the multirotor describes its bearing, or, in other words, rotation of the craft as it stays level to the ground. The yaw controls the orientation of the quadcopter in space.</li>
+                  </ul>
+                </p>
+                <h5 class="card-title" style="margin-top: 25px;">Steering</h5>
+                <p>
+                  While flying your multirotor, it is very important to understand how the multirotor moves and how we control it. At the root of all the multirotor’s movements is the rotational speed of the motors. By adjusting the relative speeds of the motors in just the right ways, keeping in mind that the rotational speed of the motors determines how much lift each prop produces, the flight controller is able to cause the multirotor to rotate around any of the directional axes (roll, pitch, and yaw), or make the multirotor gain or lose altitude.
+                </p>
+                <h5 class="card-title" style="margin-top: 25px;">Roll and Pitch</h5>
+                <p>
+                  To make the multirotor rotate about the roll or pitch axes, the flight controller makes the motors on one side of the multirotor spin faster than the motors on the other side. This means that one side of the multirotor will have more lift than the other side, causing the multirotor to tilt.
+                </p>
+                <p>
+                  So, for example, to make a quadcopter roll right (or rotate about the roll axis clockwise), the flight controller will make the two motors on the left side of the multirotor spin faster than the two motors on the right side. The left side of the craft will then have more lift than the right side, which causes the multirotor to tilt.
+                </p>
+                <p>
+                  Similarly, to make a quadcopter pitch down (rotate about the pitch axis clockwise) the flight controller will make the two motors on the back of the craft spin faster than the two motors on the front. This makes the craft tilt in the same way that your head tilts when you look down.
+                </p>
+                <div>
+                  <img src="https://i0.wp.com/blacktieaerial.com/wp-content/uploads/2014/04/rotor-spin-roll-right.jpg?w=400&ssl=1" alt="" style="margin: 20px;">
+                  <img src="https://i0.wp.com/blacktieaerial.com/wp-content/uploads/2014/04/rotor-spin-pitch-down.jpg?w=400&ssl=1" alt="" style="margin: 20px;">
+                </div>
+                <h5 class="card-title" style="margin-top: 25px;">Yaw</h5>
+                <p>
+                  Controlling the multirotor’s rotation about the yaw axis is a bit more complex than controlling its rotation about the roll or pitch axes. First, let’s discuss how we prevent rotation about the yaw axis. When assembling and programming multirotors, we set up the motors so that each motor spins in the opposite direction than its neighbors. In other words, using a quadcopter as an example again, starting from the front-left motor and moving around the multirotor clockwise, the motors’ rotational directions alternate, CW, CCW, CW, CCW. We use this rotational configuration to neutralize, or cancel out, each motor’s tendency to make the multirotor rotate.
+                </p>
+                <img src="https://i2.wp.com/blacktieaerial.com/wp-content/uploads/2014/04/prop-rotational-directions.jpg?w=400&ssl=1" alt="" style="margin: 20px;">
+                <p>
+                  You see, when a prop spins, for example, clockwise, conservation of angular momentum means that the body of the multirotor will have a tendency to spin counter-clockwise. This is due to Newton’s third law of motion, “for every action, there is an equal and opposite reaction.” The body of the multirotor will tend to spin in the direction opposite the rotational direction of the propellers.
+                </p>
+                <img src="https://i1.wp.com/blacktieaerial.com/wp-content/uploads/2014/04/prop-rotational-directions-all-same-induced-yaw.jpg?w=400&ssl=1" alt="" style="margin: 20px;">
+                <p>
+                  I know this might be a bit confusing, so let’s discuss helicopters as a simpler example. As you may know, helicopters have two rotors. One big main rotor responsible for lifting the aircraft, and one small rotor on the tail that adjusts how the helicopter spins. Imaging what would happen if in mid-flight, a helicopter’s tail rotor fell off the aircraft while the big main rotor kept spinning (this by the way is something we hope never happens to any helicopter pilots). You can probably imagine that the helicopter would start spinning. Well this rotation would be caused by the rotation of the propeller in the opposite direction, according to the law of conservation of angular momentum.
+                </p>
+                <p>
+                  Bringing it all together now, each of the quadcopter’s four rotors tends to make the multirotor rotate in the opposite direction than their spin. So by using pairs of rotors spinning in opposite directions, we are able to cancel out this effect and the multirotor does not spin about the yaw axis.
+                </p>
+                <p>
+                  So therefore, when we actually want the multirotor to rotate about the yaw axis, the flight controller will slow down opposite pairs of motors relative to the other pair. This means the angular momentum of the two pairs of props will no longer be in balance and the craft rotates. We can make the multirotor rotate in either direction by slowing down different pairs of motors.
+                </p>
+                <img src="https://i2.wp.com/blacktieaerial.com/wp-content/uploads/2014/04/rotor-spin-clockwise-yaw.jpg?w=400&ssl=1" alt="" style="margin: 20px;">
+                <h5 class="card-title" style="margin-top: 25px;">Hovering/Altitude Control</h5>
+                <p>
+                  Now that we understand how steering the multirotor works, let’s quickly discuss a much simpler maneuver, hovering. To make the multirotor hover, which means the multirotor stays at a constant altitude without rotating in any direction, a balance of forces is needed. The flight controller will need to counteract the force of gravity with the lift produced by the rotors.
+                </p>
+                <p>
+                  Throwing a bit of math into the picture now, the force of gravity acting on the multirotor is equal to the mass of the multirotor times gravitational acceleration (which, as far as we are concerned, is a constant as long as we are staying on Earth). The lift produced by the multirotor is equal to the sum of the lift produced by each of the its rotors. Therefore, if the force of gravity equals the force of the lift produced by the motors, the multirotor will maintain a constant altitude.
+                </p>
+                <p>
+                  To ascend or descend, therefore, the flight controller disrupts this balance. If the lift produced by the multirotor is greater than the force of gravity, the craft will gain altitude. If the opposite is true, that is, if the lift produced by the multirotor is less than the force of gravity acting on the multirotor, then the multirotor will fall.
+                </p>
+                <h5 class="card-title" style="margin-top: 25px;">Movement</h5>
+                <p>
+                  So we’ve already discussed how, by adjusting the relative speeds of the motors, the flight controller can make the multirotor tilt. Well, the reason we want to be able to tilt the multirotor is that tilting the multirotor causes it to move. By tilting the multirotor in different directions, it can be made to move forward, backward, left, or right (neither altitude control nor yaw control involve tilting). For example, when the multirotor pitches down (clockwise around the pitch axis) it moves forward.
+                </p>
+                <p>
+                  The reason the multirotor moves when it tilts is because while the multirotor is tilting, some of the lift produced by the rotor is directed horizontally while normally all of the lift is directed downward. This sideways component of the lift pushes the multirotor.
+                </p>
+                <p>
+                  Now, you might have realized the problem that happens when we sacrifice some of the multirotor’s downward thrust to move the craft horizontally. Since less thrust is directed downward while the multirotor is tilting, multirotors tend to lose altitude while moving around. Now some flight controllers have a feature called “altitude hold” which means that the flight controller automatically adjusts the motor speeds in order to make the craft maintain a constant altitude while moving. Unfortunately, the KK2.1 flight controller used in the tutorials on this site lacks this feature. This helps keep costs down, but also means that the pilot must manually adjust the throttle to maintain altitude while maneuvering.
+                </p>
+                <p><h5>Physics of Quadcopter #1</h5></p>
+                <div class="embed-responsive embed-responsive-16by9">
+                  <iframe width="480" height="360" src="https://www.youtube.com/embed/DNc8o9CZLHU" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+                <p><h5>Physics of Quadcopter #2</h5></p>
+                <div class="embed-responsive embed-responsive-16by9">
+                  <iframe width="854" height="480" src="https://www.youtube.com/embed/PkbkO3e0ev0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+                <!-- <a href="#" class="btn btn-primary" style="margin-top: 25px;">Go somewhere</a> -->
+              </div>
+              <div class="card-footer text-muted" style="margin-top:15px;">
+                Content supported by <a href="https://blacktieaerial.com/the-physics-of-quadcopter-flight/#">Black Tie Aerial</a>. Used in terms with <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC license</a>.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="pidTuning" role="tabpanel" aria-labelledby="nav-profile-tab">
+          <div class="jumbotron border shadow-lg" style="background-color: white; border-color: #d6d6d6 !important; color: #005384 !important">
+            <h1 align="center" style="font-weight: 15">PID Tuning</h1>
+            <hr class="my-4">
+            <div class="card text-center rounded shadow" style="text-align: justify !important; ">
+              <div class="card-header">PID Tuning</div>
+              <div class="card-body">
+                <h5 class="card-title" style="margin-top: 25px;">What Is PID in a Quadcopter?</h5>
+                <p>
+                  <strong>PID</strong> stands for <strong>Proportional, Integral, Derivative</strong>, it’s part of a flight controller software that reads the data from sensors and calculates how fast the motors should spin in order to retain the desired rotation speed of the aircraft.
+                </p>
+                <p>
+                  The goal of the PID controller is to correct the “error“, the difference between a measured value (gyro sensor measurement), and a desired set-point (the desired rotation speed). The “error” can be minimized by adjusting the control inputs in every loop, which is the speed of the motors.
+                </p>
+                <img src="https://oscarliang.com/ctt/uploads/2013/10/PID-quadcopter.jpg" alt="" style="margin: 20px;">
+                <p>
+                  There are 3 values in a PID controller, they are the P term, I term, and D term :
+                  <ul>
+                    <li>"P" looks at present error –  the further it is from the set-point, the harder it pushes</li>
+                    <li>"I" is the accumulation of past errors, it looks at forces that happen over time; for example if a quad constantly drifts away from a set-point due to wind, it will spool up motors to counteract it</li>
+                    <li>"D" is a prediction of future errors – it looks at how fast you are approaching a set-point and counteracts P when it is getting close to minimize overshoot</li>
+                  </ul>
+                </p>
+                <h5 class="card-title" style="margin-top: 25px;">PID Tuning is like Playing Golf!</h5>
+                <p>
+                  One less accurate but easy to understand analogy I often use is playing golf. What PID does, is like trying to get the golf ball into the hole. Every time you hit the ball, it might end up too far, or too short, but hopefully it gets closer and closer. You repeat until you eventually get it.
+                </p>
+                <p>
+                  PID tuning is like improving your golf skills, so you can get the golf ball into the hole in as few strikes as possible.
+                </p>
+                <img src="https://oscarliang.com/ctt/uploads/2018/02/pid-overshoot-undershoop-oscillation-diagram-explain.jpg" alt="" style="margin: 20px;">
+                <h5 class="card-title" style="margin-top: 25px;">What is Looptime?</h5>
+                <p>
+                  From the PID controller reading sensor data to calculating the output, this whole process is called a “loop”. Modern flight controllers in racing drones are capable of doing thousands of “loops” per second.
+                </p>
+                <p>
+                  The time it takes for the FC to complete a loop, is called “looptime”. Looptime can be measured in milli-second, but more commonly it’s measured in Hz. For example :
+                  <ul>
+                    <li>A loop that takes 1 second = 1 cycle per second = 1Hz</li>
+                    <li>A loop that takes 1ms (0.001 second) = 1KHz</li>
+                  </ul>
+                </p>
+                <p>
+                  It is now quite common to see flight controllers that are capable of doing 8KHz looptime, some can even do up to 32KHz. But whether faster is better or not, that’s another long topics. There are pro’s and con’s doing 32KHz, so many people prefer to stick with 8KHz or even lower looptime.
+                </p>
+                <h5 class="card-title" style="margin-top: 25px;">The Effect Of Each PID Parameter</h5>
+                <p>
+                  Altering PID values affects a quadcopter’s behavior in different ways.
+                </p>
+                <img src="https://www.controleng.com/uploads/RTEmagicC_CTL1608_MAG_F1_LoopTuning_fig-1.jpg.jpg" alt="" style="margin: 20px;">
+                <h6><strong>P Gain</strong></h6>
+                <p>
+                  P gain determines how hard the flight controller works to correct error and achieve the desired flight path (i.e. where the pilot wants the quad to go by moving the transmitter sticks).
+                </p>
+                <p>
+                  Think of it as a sensitivity and responsiveness setting. The snappy response provided with a high P gain can even make it feel like you have increased your rates. Generally speaking, higher P gain means sharper control while low P gain means softer control.
+                </p>
+                <p>
+                  If P is too high, the quadcopter becomes too sensitive and tends to over-correct, eventually it will cause overshoots, and you will have high frequency oscillations. You can lower P to reduce the oscillations, but reduce it too much and your quadcopter will start to feel sloppy.
+                </p>
+                <h6><strong>I Gain</strong></h6>
+                <p>
+                  I term determines how hard the FC works to hold the drone’s attitude against external forces, such as wind and off-centered CG. Think of it as the stiffness setting in the stall motion of your quadcopter, and how well it holds its attitude.
+                </p>
+                <p>
+                  In Betaflight, default I gain works pretty well on most setups. But if you notice some drifting without user command, then increase it. When I is too low you might find yourself having to correct the quad’s flying path a lot more with your sticks, especially when you are active with the throttle.
+                </p>
+                <p>
+                  When I gain gets too high, your quadcopter will be overly constrained by this, and start to feel stiff and unresponsive. It’s similar to having a slower reaction and a decreased P gain. Excessive I gain in extreme cases can create a low frequency oscillation. Another issue that I gain can address or improve is "throttle dips".
+                </p>
+                <p>
+                  In the real world, no two ESC’s, motors or propellers are identical, thus they will provide different levels of thrust even when spinning in the same air. When you do a punch out and immediately lower your throttle, one motor might increase and decrease RPM faster than the others, this will cause an unwanted dip movement.
+                </p>
+                <p>
+                  You can increase I gain to "fix" these tiny details in the flight performance. To avoid bringing in undesired "stiffness" to our quads with high I gain, a new feature was introduced in <a href="https://chrome.google.com/webstore/detail/betaflight-configurator/kdaghagfopacdngbohiknlhcocjccjao?hl=it">Betaflight</a> called "Anti Gravity". In a nutshell it allows you to have lower I gain when cruising, and only increase your I gain when doing punchouts.
+                </p>
+                <h6><strong>D Gain</strong></h6>
+                <p>
+                  D gain works as a damper and reduces the over-correcting and overshoots caused by P term. Like a shock absorber stops the suspension from being bouncy, adding D gain can "soften" and counteract the oscillations caused by excessive P gain, as well as minimizing propwash oscillations.
+                </p>
+                <p>
+                  When D is too low, your quad will have bad bounce-backs at the end of a flip or roll, and you will also experience the worst propwash oscillations in vertical descents.
+                </p>
+                <p>
+                  Increasing D gain can improve these problems, however, an excessive D value can introduce vibration in your quadcopter because it amplifies the noise in the system. Eventually this will lead to motor overheat and quad oscillation.
+                </p>
+                <p>
+                  Another side effect of excessive D term is the decrease in the quad’s response, this effect is often described as "mushy".
+                </p>
+                <p><h5>PID Tuning #1</h5></p>
+                <div class="embed-responsive embed-responsive-16by9">
+                  <iframe width="480" height="360" src="https://www.youtube.com/embed/0vqWyramGy8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+                <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+              </div>
+              <div class="card-footer text-muted">
+                Content supported by <a href="https://oscarliang.com/quadcopter-pid-explained-tuning/">Oscar Liang</a>.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+          <div class="jumbotron border shadow-lg" style="background-color: white; border-color: #d6d6d6 !important;">
+            <h1 class="Display-3">HI there!</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Shit just to make some space -->
+  <div style="visibility: hidden;">
+    It starts here
+    <% for(var i=0; i<3; i++){ %>
+        <h5>tptptp</h5>
+    <% } %>
+  </div>
+  </div>
+</div>
+
+<!-- include footer partial -->
+<% include \Quadcopter-Project\Quadcopter_web\views\partials\footer %>

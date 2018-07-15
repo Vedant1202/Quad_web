@@ -1,0 +1,104 @@
+<!-- News page -->
+
+<!-- Bootstrap link  -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+<!-- include header partial -->
+<% include \Quadcopter-Project\Quadcopter_web\views\partials\header %>
+
+  <style media="screen">
+  .backgroundNews{
+    background-image: url("https://lh3.googleusercontent.com/JcErfneHJ0a8JfoXagZP2aggu8iXfogTPGBOPP6Rl3jRvvK6h-sdAOa9lMyBQYRYQ1hngteJK7IcWg1aCfppUT546SEcIg1j0vyEYEAHkU4vynqP-Jx9p4ucCObVjsvX8ZI7s0G-bywefPQzwk2obsLgiHKUBGwExEaODYYj7Y7EEUdOFWBY03vpBovcpwqor9aZGVNxE_RCZH3fV1W-oMlm1BEst4c8mDgnjDOJvoiODzcD4udQ09-5KqKJteN7R3BKjV0NLtvC7kAcXGAXA7eVX2kY2o6H1TIopEZTeV6tPH6I6q9WPqWGfeIavxFnpzEvRMxx3eMuBZxC-HaBQ8Mwomzj8tZKbazhle6duwwkgZz-0kG8MAT36I2jzP5qMI_XSOsUeHyTChdwxDHy0HdNmo79XX6ZyS0VZmwl3YRl12Qun5ifRF_ihHZv8kj1HB3Q2YOOrt0zrvTkAhls4-iR7SvvLqtJ7Y9GHAgDqGv_n_KMpbswxLnf8cNlGuso9xR54BE1Nz1qNemm-LRZbPrkua_GFjIWeavZBcWxJ6CRrSMJYrktJF8aQ4xjUL5Xa5U0nOw5_Ucj-h0NamalJ2yALhjDDab0mA=w796-h520-no");
+    background-repeat: no-repeat;
+    background-position: relative;
+    overflow: auto;
+    background-size: 100%;
+    background-attachment: scroll;
+  }
+  </style>
+
+  <!-- include a navbar for what and why pages -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light rounded-bottom shadow-lg sticky-top border" style="background-color:#efefef !important; border-color:#a5a5a5 !important;">
+    <a class="navbar-brand" href="#"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav py-0">
+        <li class="nav-item">
+        <a class="nav-link py-0" href="/whatIs"><button class="btn btn-outline-secondary" type="button" style="margin-left:50px; margin-right:50px;">What?</button></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link py-0" href="/whyIs"><button class="btn btn-outline-secondary" type="button">Why?</button></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link py-0" href="/news"><button class="btn btn-info" type="button" style="margin-left:950px;">News</button></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <%   var newsTitle = []; %>
+  <%   var newsImg = []; %>
+
+
+  <div class="backgroundNews">
+    <!-- news display jumbotron -->
+    <!-- <div class="container" align = "center"> -->
+      <!-- <div class="jumbotron" style="margin top: 100px; height:400px; opacity: 0.8"> -->
+        <!-- display news -->
+        <% var news = newsData["articles"]; %>
+        <% var newsTitle = []; %>
+        <% var newsImg = []; %>
+        <% var newsLink = []; %>
+        <% for(var i=0; i<3; i++) { %>
+            <% newsTitle[i] = news[i]['title']; %>
+            <% newsImg[i] = news[i]['urlToImage']; %>
+            <% newsLink[i] = news[i]['url']; %>
+      <% }%>
+      <!-- </div> -->
+    <!-- </div> -->
+
+    <div class="container" align="center" style="margin-top: 30px; margin-bottom: 150px;">
+      <div class="jumbotron shadow" style="width:90%">
+        <h4 class="Display-4">Latest News on Drones</h4>
+        <hr class="my-4">
+        <div class="card-deck" style="width: 800px !important; opacity:1 !important">
+        <div class="card border shadow" style="border-color:#a8a8a8 !important">
+          <img class="card-img-top" src="<%= newsImg[0]; %>" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title"></h5>
+            <p class="card-text"><%= newsTitle[0] %></p>
+          </div>
+            <div class="card-footer">
+              <a href="" onclick="window.open('<%= newsLink[0] %>', '_blank')"><button class="btn btn-info">Visit Page</button></a>
+            </div>
+        </div>
+        <div class="card border shadow" style="border-color:#a8a8a8 !important">
+          <img class="card-img-top" src="<%= newsImg[1]; %>" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title"></h5>
+            <p class="card-text"><%= newsTitle[1] %></p>
+          </div>
+          <div class="card-footer">
+            <a href="" onclick="window.open('<%= newsLink[1] %>', '_blank')"><button class="btn btn-info">Visit Page</button></a>
+          </div>
+        </div>
+        <div class="card border shadow" style="border-color:#a8a8a8 !important">
+          <img class="card-img-top" src="<%= newsImg[2]; %>" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title"></h5>
+            <p class="card-text"><%= newsTitle[2] %></p>
+          </div>
+          <div class="card-footer">
+            <a href="" onclick="window.open('<%= newsLink[2] %>', '_blank')"><button class="btn btn-info">Visit Page</button></a>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- include footer partial -->
+  <% include \Quadcopter-Project\Quadcopter_web\views\partials\footer %>
