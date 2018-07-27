@@ -1,0 +1,141 @@
+<script
+src="https://code.jquery.com/jquery-3.3.1.js"
+integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+crossorigin="anonymous"></script>
+
+    <!-- Bootsrap link -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+    <% include \Quadcopter-Project\Quadcopter_web\views\partials\header %>
+
+<div class="container" align="center">
+  <div class="jumbotron shadow-lg rounded fadeIn" align="center" style="width: 70%; opacity:0; margin-top:30px;">
+    <h4 class="Display-3">Q&A Section</h4>
+    <hr class="my-4">
+    <h3 class="text text-muted" style="font-weight: 200 !important">Post your comments, questions, solutions!</h3>
+  </div>
+</div>
+
+<!-- comments section////////////////////////////////// -->
+
+<div class="container">
+  <div class="jumbotron shadow-lg rounded" style="margin-top: 150px; margin-bottom: 120px;">
+    <div class="container" style="text-align: justify !important">
+      <div align="center"><h1 class="mb-2" style="font-weight: 400 !important">Comments</h1></div>
+      <hr style="margin-bottom: 40px;">
+      <div class="row">
+          <div class="pre-scrollable comments col-md-11 border rounded" style="max-height:1080px; border-color: #cccccc !important; margin-left:40px;" id="comments">
+            <!-- comment -->
+            <div class="comment mb-2 row" style="margin-top: 20px;">
+                <% postquestions.forEach(function(postquestion){ %>
+                  <div class="comment-avatar col-md-1 col-sm-2 text-center pr-1">
+                      <a href="#"><img class="mx-auto rounded-circle img-fluid" src="http://www.stickpng.com/assets/images/585e4bf3cb11b227491c339a.png" style="width: 30px; height: 30px" alt="avatar"></a>
+                  </div>
+                  <div class="comment-content col-md-11 col-sm-10">
+                      <h6 class="small comment-meta"><span style="font-weight: 600 !important; font-size: 18; color: #004289 !important; margin-right: 20px !important;"><%= postquestion.name%></span>
+                        <%= postquestion.posted %></h6>
+                      <div class="comment-body">
+                          <p>
+                              <%= postquestion.body %>
+                              <br>
+                              <form action="/questions/<%= postquestion._id %>?_method=DELETE" method="POST">
+                                <a href="#postCommentsForm">Reply</a>
+                                <input type="submit" class="btn btn-link" style="color: red !important; margin-bottom: 3px;" value="Delete">
+                              </form>
+                              <!-- /////////reply section start//////// -->
+                                <!-- <a data-toggle="collapse" href="#<%= postquestion.id %>" role="button" aria-expanded="false" >
+                                  Reply
+                                </a>
+                                </p>
+                              <div class="collapse" id="<%= postquestion.id %>">
+                              <div class="card card-body">
+                                <form method="POST" action="/questions" class="replyForm">
+                                  <div class="form-group">
+                                    <input required class="form-control" type="text" name="postcom[replies[name]]" placeholder="Enter your name" style="width: 90%; margin-top: 2px;">
+                                  </div>
+                                  <div class="form-group">
+                                    <textarea required class="form-control" rows="2" cols="40" id="formControlBody" name="postcom[replies[body]]" placeholder="Type your comment" style="width:90%; margin-top: 2px;"></textarea>
+                                    <input type="text" name="postcom[replies[replyId]]" value="<%= postquestion.id %>" hidden>
+                                    <button type="submit" class="btn btn-primary replyButton" style="margin-top: 30px;">Submit</button>
+                                  </div>
+                                  <div class="form-group form-check">
+                                  </div>
+                                </form>
+                              </div>
+                              </div> -->
+                              <!-- ////////////////reply section end//////////////////// -->
+                              <!-- <a class="textReplyClass" href="#textReply" style="margin-top:5px; font-weight: 00; font-size:14">Reply</a> -->
+                          </p>
+                      </div>
+                  </div>
+                <% }) %>
+
+                <!-- <a class="textReplyClass" href="#textReply" style="margin-top:5px; font-weight: 00; font-size:14">Reply</a> -->
+                <!-- tpptppt -->
+
+                <!-- reply is indented -->
+                <!-- <div class="comment-reply col-md-11 offset-md-1 col-sm-10 offset-sm-2">
+                    <div class="row">
+                        <div class="comment-avatar col-md-1 col-sm-2 text-center pr-1">
+                            <a href=""><img class="mx-auto rounded-circle img-fluid" src="http://www.stickpng.com/assets/images/585e4bf3cb11b227491c339a.png" style="width: 30px; height: 30px" alt="avatar"></a>
+                        </div>
+                        <div class="comment-content col-md-11 col-sm-10 col-12">
+                            <h6 class="small comment-meta"><a href="#">User 2</a> Today, 12:31</h6>
+                            <div class="comment-body">
+                                <p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitat.
+                                    <br> -->
+                                    <!-- /////////////////// reply collapse//////////// -->
+                                    <!-- <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">Reply</a> -->
+                                    <!-- <div class="container"> -->
+                                      <!-- <div class="collapse" id="collapseExample" style="width: 60%">
+                                        <div class="card card-body">
+                                          HI there
+                                        </div>
+                                      </div> -->
+                                    <!-- </div> -->
+                                <!-- </p>
+                            </div>
+                        </div>
+                    </div>
+               </div> -->
+               <!-- /reply is indented -->
+            </div>
+          </div>
+
+
+            <!-- text area -->
+            <div class="container">
+              <div class="container" id="postCommentsForm">
+                <div class="jumbotron" style="background-color: rgba(255, 255, 255, 0.4); border-color: #cccccc !important; width: 97%; margin-left: 10px; margin-top: 20px;">
+                  <h3 style="margin-left: 30px; margin-top: 0px; font-weight: 300 !important">Post your Comments / Questions</h3>
+                  <hr class="my-4">
+                  <form class="commentForm" action="/questions" id="form1" method="POST" style="margin-left: 20px; margin-top: 30px;">
+                    <label for="formControlName" style=" margin-top: 20px;">Name</label>
+                    <input required class="form-control" id="formControlName" type="text" name="postcom[name]" placeholder="Enter your name" style="width: 90%; margin-top: 2px;">
+                    <label for="formControlBody" style=" margin-top: 20px;">Your comment / question</label>
+                    <textarea required class="form-control" id="textReply" rows="8" cols="80" id="formControlBody" name="postcom[body]" placeholder="Type your comment" style="width:90%; margin-top: 2px;"></textarea>
+                    <button type="submit" id="submitComment" class="btn btn-primary commentButton" style="margin-top: 30px;">Submit</button>
+                  </form>
+                </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      $(".collapse").collapse('toggle');
+      );
+      // console.log(postquestion.posted.time);
+      $('button.commentButton').click(function () {
+        $('form.commentForm').submit();
+      });
+      $('button.replyButton').click(function () {
+        $('form.replyForm').submit();
+      });
+
+    </script>
+
+<% include \Quadcopter-Project\Quadcopter_web\views\partials\footer %>

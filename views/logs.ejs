@@ -1,0 +1,178 @@
+<!-- This is the logs main page -->
+
+
+<!-- Bootstrap link  -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+<!-- jQuery link -->
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+
+<% include \Quadcopter-Project\Quadcopter_web\views\partials\header %>
+
+<div class="backgroundLogs p-3 mb-2 bg-gradient-primary" style="background: linear-gradient(#7f7fd5, #86a8e7, #91eae4, #86a8e7, #7f7fd5); margin-bottom: 0px !important;">
+  <div class="container" style="width:60%">
+    <div class="jumbotron rounded border border-dark shadow-lg fadeIn" align="center" style="margin-top: 10px; opacity:0; border-color:#969696 !important;">
+      <h2 class="Display-3">Logs</h2>
+      <hr class="my-4">
+        <p>
+          <span class="text text-muted" style="font-size: 25;">Welcome to the logs page.</span>
+        </p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="jumbotron" style="background-color:rgba(255,  255, 255, 0.5); margin-top: 100px;">
+      <div class="container">
+        <!-- <div class="jumbotron"> -->
+          <span align="center"><h1 style=" font-size:50; font-weight: 200; color: #150060 !important;">See our journey of building a quadcopter step by step.</h1></span>
+          <hr class="my-4">
+          <!-- /////////////accordion -->
+          <div class="accordion" id="accordionExample">
+            <div class="card shadow rounded" style="margin-top: 40px;">
+              <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                  <button class="btn btn-light" style=" background-color: #5555fc !important" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    <h5 style="color: white !important; margin-top: 4px; text-align: justify !important;">September</h5>
+                  </button>
+                </h5>
+              </div>
+
+              <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                <div class="card-body" style="color: #190487 !important">
+                  <ul style="font-size: 20; text-align: justify; margin-right: 30px;">
+                    <!-- Decided and Researched -->
+                    <li style="margin-top: 40px;">
+                      <h3>Decided to build a Quadcopter and researched about it</h3>
+                      <span style="font-size:18; color: #6d6d6d !important">9th September</span>
+                      <hr>
+                      <ul>
+                        <li>Four people of similar interest came together and thought of building  a quadcopter as their first year project and modify it in our higher semesters.</li>
+                      </ul>
+                    </li>
+                    <li style="margin-top: 40px;">
+                      <h3>Researching about the Quadcopter</h3>
+                      <span style="font-size:18; color: #6d6d6d !important">11th September - 18th September</span>
+                      <hr>
+                      <ul>
+                        <li>We had limited knowledge about building a Quadcopter so we searched the internet for a week about the physics behind its flight, different components required and how they work together, and ultimately how to build one. </li>
+                        <li>A few of the good sources that we found useful are <a style="color: #d6d6d6 !important" href="/resources#headingThree">here</a>.</li>
+                      </ul>
+                    </li>
+                    <li style="margin-top: 40px;">
+                      <h3>Buying the components</h3>
+                      <span style="font-size:18; color: #6d6d6d !important">20th September</span>
+                      <hr>
+                      <ul>
+                        <li>We first explored online regarding the components on websites like amazon, ebay, hobbyking, etc. We got a rough estimate of the total cost of the project if we buy the components online.</li>
+                        <li>Then we checked the same components at Lamington Road and as the prices were almost similar than what we calculated online, so we bought them. Also we needed to start the project as soon as possible and online delivery would take 12-15 days, we decided to buy them offline.</li>
+                        <li>The link to the components page is <a style="color: #d6d6d6 !important" href="/components">here</a>.</li>
+                      </ul>
+                    </li>
+                    <li style="margin-top: 40px;">
+                      <h3>Starting to assemble the Quadcopter</h3>
+                      <span style="font-size:18; color: #6d6d6d !important">26th September</span>
+                      <hr>
+                      <ul>
+                        <li>We first started by making the solder bases on each of the wire terminals on the distribution board of the frame.</li>
+                        <li>Then we connected the distribution board to the arms of the quadcopter and thus our frame was assembled.</li>
+                        <li>Next we cut out the male pins from the four esc's and connected one to the power terminal on the power distribution board.</li>
+                        <li>We soldered the bare wires of the esc's on each of the arm terminals on the power distribution board. We then taped the esc's firmly to the frame, so that they do not hang loose and thus get damaged during use.</li>
+                        <li>Proceeding, we fixed the motors on the arm ends with screws (they are provided with the motors). Then we connected the motor wires to the appropriate wires of the esc's ( the yellow wire of the motor should be connected to the middle wire of the esc).</li>
+                        <li>After we were done with connecting all four motors, we then checked if all the motors spin in the desired direction as per the picture shown below.</li>
+                        <img src="http://i.imgur.com/m2JZO3y.png" style="margin: 30px; height: 600px; width: 600px;" alt="">
+                        <p>( If a motor spins in the opposite direction just interchange the red and black wires of the motor with the esc wires.)</p>
+                        <li>Then we connected the propellers to the respective motors ( clockwise propeller for clockwise motor and similar for counter-clockwise). To identify which propeller has what spin direction, the sloping side of the propeller need to spin against the direction desired.</li>
+                        <img src="https://img.rcgroups.com/http://www.pyramidmodels.com/shop/shopimages/props%20rotation.jpg?h=3uElcgbkpNlaX_XYEYXF-A" style="margin: 30px; height: 500px; width: 600px;" alt="">
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="card shadow rounded" style="margin-top: 40px; background-color: white !important">
+              <div class="card-header" id="headingTwo">
+                <h5 class="mb-0">
+                  <button class="btn btn-light collapsed" style="background-color: #5555fc !important;" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    <h5 style=" margin-top: 4px; color: white !important; text-align: justify !important;">October</h5>
+                  </button>
+                </h5>
+              </div>
+              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                <div class="card-body" style="color: #190487 !important;  background-color: white !important">
+                  <li style="margin-top: 40px;">
+                    <h3>Booting up the Quadcopter</h3>
+                    <span style="font-size:18; color: #6d6d6d !important">9th September</span>
+                    <hr>
+                    <ul>
+                      <li></li>
+                    </ul>
+                  </li>
+                </div>
+              </div>
+            </div>
+            <div class="card shadow rounded" style=" margin-top: 40px; background-color: white !important">
+              <div class="card-header" id="headingThree">
+                <h5 class="mb-0">
+                  <button class="btn btn-light collapsed" style="background-color: #5555fc !important;" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    <h5 style=" margin-top: 4px; color: white !important; text-align: justify !important;">October</h5>
+                  </button>
+                </h5>
+              </div>
+              <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                <div class="card-body" style="color: #190487 !important;  background-color: white !important">
+                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                </div>
+              </div>
+            </div>
+          </div>
+
+        <!-- </div> -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Shit just to make some space -->
+  <div style="visibility: hidden;">
+    <h4>It starts here</h4>
+    <% for(var i=0; i<4; i++){ %>
+      <p>
+        <h3>tptptp</h3>
+      </p>
+    <% } %>
+  </div>
+</div>
+
+<!-- include footer partial -->
+<% include \Quadcopter-Project\Quadcopter_web\views\partials\footer %>
+
+<!-- tptpt -->
+<!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Launch demo modal
+</button> -->
+
+<!-- Modal -->
+<!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div> -->
+<!-- tptp -->

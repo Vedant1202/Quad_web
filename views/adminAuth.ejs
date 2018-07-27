@@ -1,0 +1,44 @@
+<script
+src="https://code.jquery.com/jquery-3.3.1.js"
+integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+crossorigin="anonymous"></script>
+
+    <!-- Bootsrap link -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+
+    <% include \Quadcopter-Project\Quadcopter_web\views\partials\header %>
+
+  <div class="container">
+    <div class="jumbotron shadow-lg rounded" style="margin-top: 80px; margin-bottom: 300px; background-color: rgba(255, 255, 255, 0.8)">
+      <h3 class="display-2" align="center" style="">Admin Log-in</h3>
+      <hr class="my-4">
+      <div class="container" style="width: 60% !important">
+        <div class="jumbotron bg-light shadow-lg rounded" style="background-color: white">
+          <form action="/admin" method="POST">
+           <div class="form-group" style="margin-top: 30px;">
+             <label for="exampleInputEmail1"> <h4>Admin ID</h4> </label>
+             <input name="username" required type="text" class="form-control form-control-lg" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Admin ID">
+             <small id="emailHelp" class="form-text text-muted"> <span style="margin-top: 10px; font-size: 18"> Hint: A world without light would be... dark!</span> </small>
+           </div>
+           <div class="form-group">
+             <label for="exampleInputPassword1"> <h4>Password</h4> </label>
+             <input name="password" required type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password">
+           </div>
+           <!-- <div class="form-group form-check"> -->
+             <!-- <input type="checkbox" class="form-check-input" id="exampleCheck1"> -->
+             <!-- <label class="form-check-label" for="exampleCheck1">Check me out</label> -->
+           <!-- </div> -->
+           <button type="submit" class="btn btn-primary btn-lg" style="margin-top: 15px;">Submit</button>
+          </form>
+          <!-- <div class="container">
+            <p>
+              <a href="/registerWithAWink">Register?</a>
+            </p>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+<% include \Quadcopter-Project\Quadcopter_web\views\partials\footer %>
