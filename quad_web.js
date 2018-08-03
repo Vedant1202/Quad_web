@@ -8,6 +8,7 @@ var express             = require('express'),
     bodyParser          = require('body-parser'),
     request             = require('request'),
     postquestion        = require('./models/postquestion.js'),
+    // replyquestion       = require('./models/replyquestion.js'),
     admin               = require('./models/admin.js'),
     methodOverride      = require("method-override"),
     replyquestion       = require('./models/replyquestion.js'),
@@ -47,8 +48,13 @@ app.use(function (req, res, next) {
 
 // ---------------------------- ROUTES ---------------------------//
 
-//landing page
+//Landing Page
 app.get("/", function (req, res) {
+  res.render("titlePage");
+});
+
+//Home Page
+app.get("/home", function (req, res) {
   res.render("landing");
 });
 
@@ -92,15 +98,15 @@ app.post("/questions", function (req, res) {
         res.redirect("/questions");
       }
   });
-  // replyquestion.create(req.body.replycom, function (err, newReply) {
-  //   if(err){
-  //     console.log(err);
-  //   } else {
-  //     //redirect to comments page
-  //     console.log("reply added succesfully");
-  //     res.redirect("/questions");
-  //   }
-  // });
+//   replyquestion.create(req.body.replycom, function (err, newReply) {
+//     if(err){
+//       console.log(err);
+//     } else {
+//       //redirect to comments page
+//       console.log("reply added succesfully");
+//       res.redirect("/questions");
+//     }
+//   });
 });
 
 //Delete comments route
