@@ -174,6 +174,11 @@ app.get("/whyIs", function (req, res) {
   res.render("whyIs");
 });
 
+//Terms of use page
+app.get("/termsOfUse", function (req, res) {
+  res.render("termsOfUse");
+});
+
 //error page
 app.get("*", function (req, res) {
   res.send("Error page not found!!");
